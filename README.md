@@ -7,4 +7,9 @@ common divisor (GCD) of two numbers, the largest number that divides both of the
 
 2. Find duplicates in a list
 
-One-loop implementation
+Single-loop implementation
+
+3. Files in directory
+
+Collects all files in directory beginning from the path.
+If file is directory, then new iteration begins.
