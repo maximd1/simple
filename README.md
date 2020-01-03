@@ -17,3 +17,8 @@ If file is directory, then new iteration begins.
 4. Calculate sum of numbers in string
 
 Calculates sum of numbers in a given string. Check, if string is numeric.
+
+5. Mathematical induction
+
+Mathematical induction is a mathematical proof technique.
+It is essentially used to prove that a property P holds for every natural number n, i.e. for n = 0, 1, 2, 3, and so on.
