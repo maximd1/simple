@@ -13,3 +13,7 @@ Single-loop implementation
 
 Collects all files in directory beginning from the path.
 If file is directory, then new iteration begins.
+
+4. Calculate sum of numbers in string
+
+Calculates sum of numbers in a given string. Check, if string is numeric.
