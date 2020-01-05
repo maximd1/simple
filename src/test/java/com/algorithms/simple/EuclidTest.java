@@ -19,4 +19,13 @@ public class EuclidTest {
 		long divider = euclid.calculate(3119);
 		assertEquals(1, divider);
 	}
+
+	@Test
+	public void shouldReturn29() {
+		Euclid euclid = new Euclid(1769, 551);
+		long[] divider = euclid.generic(1769, 0);
+		assertEquals(29, divider[0]);
+		assertEquals(5, divider[1]);
+		assertEquals(-16, divider[2]);
+	}
 }
