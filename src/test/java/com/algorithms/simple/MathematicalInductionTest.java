@@ -26,4 +26,18 @@ public class MathematicalInductionTest {
 		long result = mathematicalInduction.induction();
 		assertEquals(n*n, result);
 	}
+
+	@Test
+	public void shouldReturnOneInNicomachus() {
+		MathematicalInduction mathematicalInduction = new MathematicalInduction(1L);
+		long result = mathematicalInduction.nicomachus();
+		assertEquals(1L, result);
+	}
+
+	@Test
+	public void shouldReturnCorrectCubesInNicomachus() {
+		MathematicalInduction mathematicalInduction = new MathematicalInduction(5L);
+		long result = mathematicalInduction.nicomachus();
+		assertEquals(225L, result);
+	}
 }
