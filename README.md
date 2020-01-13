@@ -25,10 +25,10 @@ It is essentially used to prove that a property P holds for every natural number
 
 Nicomachus theorem:
 
-1^3 = 1
-2^3 = 3 + 5
-3^3 = 7 + 9 + 11
-4^3 = 13 + 15 + 17 + 19
-5^3 = 21 + 23 + 25 +27 + 29
+1^3 = 1;
+2^3 = 3 + 5;
+3^3 = 7 + 9 + 11;
+4^3 = 13 + 15 + 17 + 19;
+5^3 = 21 + 23 + 25 +27 + 29.
 
 Using this theorem we can prove that 1^3+2^3+3^3+4^3+5^3 = (1+2+3+4+5)^2.
