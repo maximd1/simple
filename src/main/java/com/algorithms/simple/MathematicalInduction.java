@@ -16,7 +16,7 @@ public class MathematicalInduction {
 	}
 
 	/**
-	 * Proving 1+3+...(2n-1) = n(2)
+	 * Proving 1+3+...(2n-1) = n^2
 	 * @return long
 	 */
 	public long induction() {
@@ -28,8 +28,8 @@ public class MathematicalInduction {
 	}
 
 	/**
-	 * Proving 1(3)+2(3)+3(3)+...n(3) = (1+2+3+...n)(2).
-	 * n(3) = first element in a group n(2)-n+1. Group size is n.
+	 * Proving 1^3+2^3+3^3+...n^3 = (1+2+3+...n)^2.
+	 * n^3 = first element in a group n^2-n+1. Group size is n.
 	 * @return
 	 */
 	public long nicomachus() {
