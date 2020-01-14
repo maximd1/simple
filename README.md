@@ -32,3 +32,9 @@ Nicomachus theorem:
 5^3 = 21 + 23 + 25 +27 + 29.
 
 Using this theorem we can prove that 1^3+2^3+3^3+4^3+5^3 = (1+2+3+4+5)^2.
+
+6. Logarithms
+
+a. to find a solution for y = log2(x) where 1 < x < 2 using shifts, sums and differences.
+b. shortest way to find a solution for y = log(x) any base.
+
