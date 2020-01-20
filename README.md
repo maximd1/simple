@@ -38,3 +38,17 @@ Using this theorem we can prove that 1^3+2^3+3^3+4^3+5^3 = (1+2+3+4+5)^2.
 a. to find a solution for y = log2(x) where 1 < x < 2 using shifts, sums and differences.
 b. shortest way to find a solution for y = log(x) any base.
 
+7. DrMatrix number pyramid
+
+9*0+1 = 1;
+9*1+2 = 11;
+...
+9*n+(n+1) = 1(n+1)
+
+and then:
+
+0*10+1 = 1;
+1*10+2 = 12;
+2*10+3 = 123;
+...
+x*10+(x+1) = 1...x where x<=9.
