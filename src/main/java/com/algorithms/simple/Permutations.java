@@ -15,16 +15,22 @@ public class Permutations {
 		permutations.permute1(0, STR.length()-1);
 	}
 
-	public String permute1(int l, int r) {
-        if (l == r) {
+	/**
+	 * Lexicographic, O(n!)
+	 * @param int left: left element
+	 * @param int right
+	 * @return String: permutated string
+	 */
+	public String permute1(int left, int right) {
+        if (left == right) {
         	count++;
         	System.out.println(STR);
             return STR;
         } else {
-            for( int i = l; i <= r; i++ ) {
-            	STR = StringUtils.swap(STR,l,i);
-                permute1(l+1, r);
-                STR = StringUtils.swap(STR,l,i);
+            for( int i = left; i <= right; i++ ) {
+            	STR = StringUtils.swap(STR,left,i);
+                permute1(left+1, right);
+                STR = StringUtils.swap(STR,left,i);
             }
         }
         return null;
