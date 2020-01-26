@@ -16,7 +16,7 @@ public class Permutations {
 	}
 
 	/**
-	 * Lexicographic, O(n!)
+	 * Remove, O(n!)
 	 * @param int left: left element
 	 * @param int right
 	 * @return String: permutated string
