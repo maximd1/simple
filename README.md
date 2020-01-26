@@ -61,3 +61,7 @@ a. Basic algorithm: remove. O(n!)
 
 Pick the first element from the n items, the second from the remaining (n-1) items, the third from the remaining (n-2) items 
 and so on. This gives a total of n * (n - 1) * (n - 2)... * 2 * 1 items. This is the definition of n!.
+
+9. Find sum in array
+
+a. find two first elements in array sum of which is equals to 0.
