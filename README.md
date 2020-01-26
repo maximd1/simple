@@ -40,15 +40,24 @@ b. shortest way to find a solution for y = log(x) any base.
 
 7. DrMatrix number pyramid
 
-9*0+1 = 1;
-9*1+2 = 11;
+9 * 0 + 1 = 1;
+9 * 1 + 2 = 11;
 ...
-9*n+(n+1) = 1(n+1)
+9 * n + (n + 1) = 1(n + 1)
 
 and then:
 
-0*10+1 = 1;
-1*10+2 = 12;
-2*10+3 = 123;
+0 * 10 + 1 = 1;
+1 * 10 + 2 = 12;
+2 * 10 + 3 = 123;
 ...
-x*10+(x+1) = 1...x where x<=9.
+x * 10 + (x + 1) = 1...x where x <= 9.
+
+8. Permutations
+
+A permutation, also called an “arrangement number” or “order,” is a rearrangement of the elements of an ordered list S into a one-to-one correspondence with S itself.
+
+a. Basic algorithm: remove. O(n!)
+
+Pick the first element from the n items, the second from the remaining (n-1) items, the third from the remaining (n-2) items 
+and so on. This gives a total of n * (n - 1) * (n - 2)... * 2 * 1 items. This is the definition of n!.
