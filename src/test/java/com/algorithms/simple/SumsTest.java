@@ -9,8 +9,17 @@ public class SumsTest {
 	@Test
 	public void shouldReturn0and2() {
 		Sums sums = new Sums();
-		int numbers[] = new int[] {-1, 0, 1};
+		int numbers[] = new int[] {-1, 5, 1};
 		Pair pair = sums.findElementsWithSumEqualsZero(numbers, 0);
+		assertEquals(pair.A, 0);
+		assertEquals(pair.B, 2);
+	}
+	
+	@Test
+	public void shouldReturn0and2InSorted() {
+		Sums sums = new Sums();
+		int numbers[] = new int[] {-1, 0, 1};
+		Pair pair = sums.findElementsWithSumEqualsZeroBinary(numbers, 0);
 		assertEquals(pair.A, 0);
 		assertEquals(pair.B, 2);
 	}
