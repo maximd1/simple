@@ -65,3 +65,5 @@ and so on. This gives a total of n * (n - 1) * (n - 2)... * 2 * 1 items. This is
 9. Find sum in array
 
 a. find two first elements in array sum of which is equals to 0.
+a.1. find with recursion - O(n^2);
+a.2. find with binary search - O(n * log2).
