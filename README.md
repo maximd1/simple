@@ -62,7 +62,7 @@ a. Basic algorithm: remove. O(n!)
 Pick the first element from the n items, the second from the remaining (n-1) items, the third from the remaining (n-2) items 
 and so on. This gives a total of n * (n - 1) * (n - 2)... * 2 * 1 items. This is the definition of n!.
 
-b. Narayana's algorithm
+b. Narayana's algorithm. O(n^2)
 
 Find the largest index k such that a[k] < a[k + 1]. If there is no such index, the permutation given is the last permutation (and the LeetCode problem requests we return the array sorted). We find the index out of place to stop this being the last permutation.
 Find the largest index i greater than k such that a[k] < a[i]. Find the element in the right-hand side of the array.
