@@ -12,4 +12,12 @@ public class PermutationsTest {
 		prm.permute1(0, "123".length()-1);
 		assertEquals(6, Permutations.count);
 	}
+
+	@Test
+	public void shouldReturnSixNarayana() {
+		int[] numbers = {1, 2, 3};
+		Permutations prm = new Permutations(numbers);
+		prm.permute2();
+		assertEquals(6, Permutations.count);
+	}
 }
