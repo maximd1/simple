@@ -1,24 +1,34 @@
-package com.algorithms.simple;
+package com.algorithms.simple.seddlepoints;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PrimitiveIterator;
 import java.util.Random;
 
-public class SeddlePoints {
-	
-	private int MAXRANDOM = 100;
-	private static int SIZE = 5;
+public class SeddlePointFinder {
+	private static int MAXRANDOM = 100;
+	private static int SIZE = 3;
 	private static int[][] matrix;
 	
-	public static void main(String[] args) {
-		SeddlePoints seddlePoints = new SeddlePoints();
-		matrix = seddlePoints.generateRandomMatrix();
-		System.out.println();
-		findSeddlePoints();
+	public SeddlePointFinder(int[][] matrix) {
+		SeddlePointFinder.matrix = matrix;
 	}
 	
-	private int[][] generateRandomMatrix() {
+	public static void main(String[] args) {
+		SeddlePointFinder seddlePointsFinder = new SeddlePointFinder(generateRandomMatrix());
+		
+		System.out.println();
+		List<SeddlePoint> seddlePoints = seddlePointsFinder.findSeddlePoints();
+		if (seddlePoints.size() == 0) {
+			System.out.println("No seddle points found.");
+		} else {
+			seddlePoints.forEach(x -> {
+				System.out.println("Seddle point found at: " + x.getI() + ":" + x.getJ() + ", value: " + x.getValue());
+			});
+		}
+	}
+	
+	private static int[][] generateRandomMatrix() {
 		int[][] a = new int[SIZE][SIZE];
 		PrimitiveIterator.OfInt r = new Random().ints(0, MAXRANDOM+1).iterator();
 		for (int i = 0; i<SIZE; i++) {
@@ -31,8 +41,8 @@ public class SeddlePoints {
 		return a;
 	}
 	
-	private static List<Integer> findSeddlePoints() {
-		List<Integer> maximums = new ArrayList<>();
+	public List<SeddlePoint> findSeddlePoints() {
+		List<SeddlePoint> seddlePoints = new ArrayList<>();
 		for (int i = 0; i<SIZE; i++) {
 			int max = matrix[0][i];
 			for (int j = 0; j<SIZE; j++) {
@@ -40,13 +50,12 @@ public class SeddlePoints {
 					max = matrix[j][i];
 				}
 			}
-			maximums.add(max);
-			int seddlePoint = findMinInRow(i, max);
-			if (seddlePoint > 0) {
-				System.out.println("Seddle point found at: " + i + ":" + seddlePoint + ", value: " + max);
+			int j = findMinInRow(i, max);
+			if (j > 0) {
+				seddlePoints.add(new SeddlePoint(i, j, max));
 			}
 		}
-		return maximums;
+		return seddlePoints;
 	}
 	
 	private static int findMinInRow(int column, int max) {
