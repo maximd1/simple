@@ -1,7 +1,6 @@
 package com.algorithms.simple;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.PrimitiveIterator;
 import java.util.Random;
@@ -9,20 +8,13 @@ import java.util.Random;
 public class SeddlePoints {
 	
 	private int MAXRANDOM = 100;
-	private static int SIZE = 10;
+	private static int SIZE = 5;
 	private static int[][] matrix;
-	private static List<Integer> maximums;
-	private static List<Integer> minimums;
 	
 	public static void main(String[] args) {
 		SeddlePoints seddlePoints = new SeddlePoints();
 		matrix = seddlePoints.generateRandomMatrix();
 		System.out.println();
-		maximums = new ArrayList<>(findMaxInColumn());
-		maximums.stream().forEach(i -> System.out.print(i + " "));
-		System.out.println();
-		minimums = new ArrayList<>(findMinInRow());
-		minimums.stream().forEach(i -> System.out.print(i + " "));
 		findSeddlePoints();
 	}
 	
@@ -39,7 +31,7 @@ public class SeddlePoints {
 		return a;
 	}
 	
-	private static List<Integer> findMaxInColumn() {
+	private static List<Integer> findSeddlePoints() {
 		List<Integer> maximums = new ArrayList<>();
 		for (int i = 0; i<SIZE; i++) {
 			int max = matrix[0][i];
@@ -49,32 +41,23 @@ public class SeddlePoints {
 				}
 			}
 			maximums.add(max);
+			int seddlePoint = findMinInRow(i, max);
+			if (seddlePoint > 0) {
+				System.out.println("Seddle point found at: " + i + ":" + seddlePoint + ", value: " + max);
+			}
 		}
 		return maximums;
 	}
 	
-	private static List<Integer> findMinInRow() {
-		List<Integer> minimums = new ArrayList<>();
+	private static int findMinInRow(int column, int max) {
+		int min = 0;
 		for (int i = 0; i<SIZE; i++) {
-			int min = matrix[i][0];
-			for (int j = 0; j<SIZE; j++) {
-				if (matrix[i][j] < min) {
-					min = matrix[i][j];
-				}
-			}
-			minimums.add(min);
-		}
-		return minimums;
-	}
-	
-	private static List<Integer> findSeddlePoints() {
-		List<Integer> seddles = new LinkedList<>();
-		for (int i = 0; i<SIZE; i++) {
-			if (maximums.get(i) == minimums.get(i)) {
-				System.out.println("Seddle point found at: " + i + ":" + i + ", value: " + maximums.get(i));
-				seddles.add(maximums.get(i));
+			if (matrix[column][i] < max) {
+				return 0;
+			} else if (matrix[column][i] == max) {
+				min = i;
 			}
 		}
-		return seddles;
+		return min;
 	}
 }
